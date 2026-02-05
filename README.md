@@ -17,3 +17,4 @@ A port/recreation of BreadOnPenguin's DWM configuration on MangoWC using Waybar
 `vesktop`
 `telegram-desktop`
 `qutebrowser`
+`neovim`
