@@ -1,0 +1,41 @@
+@import "/home/kasey/.cache/wal/colors.css";
+
+window#osd {
+  border-radius: 0px;
+  background: alpha(var(--background), 0.8);
+}
+
+window#osd #container {
+  background: transparent;
+}
+
+window#osd image, 
+window#osd label {
+  color: var(--foreground);
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled { 
+  color: alpha(var(--background), 0.2);
+}
+
+window#osd progressbar {
+  min-height: 2px;
+  border-radius: 0px;
+  background: var(--background);
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: var(--background);
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: var(--foreground);
+}

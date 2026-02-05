@@ -1,0 +1,6 @@
+[server]
+min_brightness = 5
+keyboard_backlight = true
+max_volume = 150
+
+[client]

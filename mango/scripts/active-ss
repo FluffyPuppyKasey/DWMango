@@ -1,0 +1,4 @@
+#!/bin/sh
+# Script written by FluffyPuppyKasey
+grim -o $(mmsg -g -o | awk '$NF=="1" {print $1; exit}') $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png') && wl-copy < $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png')
+

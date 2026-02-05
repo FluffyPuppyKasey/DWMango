@@ -1,0 +1,19 @@
+{
+    "spacing": 4,
+
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],    
+    "modules-left": [
+        "dwl/tags"
+    ],
+    "modules-right": [
+		"tray",
+	    "battery",
+		"pulseaudio",
+        "custom/systemstats",
+	    "custom/disks",
+		"custom/musicplaying",
+		"custom/timedate"
+	]
+}

@@ -1,0 +1,67 @@
+{
+    "dwl/tags": {
+        "on-click": "activate",
+        "active-only": true,
+        "all-outputs": false,
+        "format": "{}",
+        "format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+        }
+    },
+
+	"battery": {
+			"format": "| {icon}  {capacity}% ({time})",
+			"format-icons": ["", "", "" ,"", ""],
+		    "format-charging": "| {icon}  {capacity}% (charging)", 
+            "format-full": "| {icon}  charged"
+	},
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 2
+    },
+
+	"pulseaudio": {
+		"format": "|   {volume}% |",
+		"format-muted": "muted |"
+	},
+
+	"custom/systemstats": {
+        "exec": "~/.config/waybar/scripts/systemstats",
+		"format": "{} |",
+		"interval": 15
+	},
+	"custom/disks": {
+        "exec": "~/.config/waybar/scripts/disks",
+		"format": "{} | ",
+		"interval": 120
+	},
+
+    "custom/musicplaying": {
+        "exec": ".config/waybar/scripts/musicplaying",
+		"format": "{} | ",
+		"interval": 1
+	},
+
+	"custom/timedate": {
+        "exec": ".config/waybar/scripts/timedate",
+		"format": "{}",
+		"interval": 60
+	},
+
+    "cava": {
+		"framerate": 60,
+		"autosens": 1,
+		"bars": 32,
+		"bar_delimiter": 0,
+		"noise_reduction": 0.5,
+		"monstercat": true,
+        "waves": true,
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
+	}
+
+
+}
+

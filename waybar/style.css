@@ -1,0 +1,47 @@
+@define-color foreground rgba(193,194,197,0.75);
+@define-color background rgba(10, 14, 23, 0.75);
+@define-color inactive rgba(23,109,138,0.75); 
+
+* {
+    font-family: Hack;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: @background; 
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-center {
+    margin-left: -35em;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+#tags button {
+    background-color: transparent;
+    color: @inactive;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#tags button.focused {
+    color: @foreground;
+}
+
+#tags button.urgent {
+    background-color: rgba(235,77,75,0.75);
+}
+
+.modules-left > widget:first-child > #tags {
+    margin-left: 0;
+}

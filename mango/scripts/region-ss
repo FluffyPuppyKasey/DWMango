@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Script written by FluffyPuppyKasey
+# There is a bug I can't seem to fix, the screen doesn't freeze
+# before the screenshot, but after it
+
+# Define timestamp variable so wl-copy won't get confused
+timestamp=$(date +%s)_grim.png
+
+# Use the ~/Pictures/Screenshots directory and save it with the same filename we defined earlier
+out="$(xdg-user-dir PICTURES)/Screenshots/$timestamp"
+
+# Make screenshot directory if it doesn't exist
+mkdir -p "$(xdg-user-dir PICTURES)/Screenshots"
+
+# Freeze the screen, and run grim to capture the screenshot
+wayfreeze --before-freeze-cmd "grim -g '$(slurp)' '$out' && wl-copy < '$out'"

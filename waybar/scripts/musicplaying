@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Script written by BreadOnPenguins, slightly modified by FluffyPuppyKasey
+
+# playerctl loop ensures that when a track is skipped in the music player itself, it still updates on bar
+pidof -x playerctl-loop >/dev/null 2>&1 || playerctl-loop >/dev/null 2>&1 &
+
+# format state to alternate between artist - title and album - title
+FORMAT_FILE="/tmp/dwmblocks_mus_format"
+[ ! -f "$FORMAT_FILE" ] && echo "0" > "$FORMAT_FILE"
+read FORMAT < "$FORMAT_FILE"
+
+[ "$FORMAT" -eq 0 ] && META="{{ trunc(artist,50) }} - {{ trunc(title,50) }}" || META="{{ trunc(album,50) }} - {{ trunc(title,50) }}"
+
+# Change this to your prefered music player
+MUSIC_PLAYING_PLAYERS=termusic
+
+for PLAYER in $MUSIC_PLAYING_PLAYERS; do
+# if the player is not playing, continue to the next player, until we find one that is playing
+	[ "$(playerctl --player $PLAYER status 2>/dev/null)" != "Playing" ] && continue
+		ICON=" "
+		echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+done
+
+if [ "$(playerctl --player $PLAYER status 2>/dev/null)" = "Paused" ]; then
+    ICON="❚❚ "
+    echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+fi

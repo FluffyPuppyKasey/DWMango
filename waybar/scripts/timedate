@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script written by BreadOnPenguins
+printf "%(%A, %B %e %_I:%M%P )T\\n"
