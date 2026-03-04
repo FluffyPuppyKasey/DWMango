@@ -36,10 +36,6 @@ button {
     background-color: @color10;
 }
 
-/*.modules-left > widget:first-child > #tags {
-    margin-left: 0;
-}*/
-
 tooltip {
     background: @background;
 	border: 1px solid @color12;
