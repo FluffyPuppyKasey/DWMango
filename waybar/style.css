@@ -1,14 +1,14 @@
-@define-color foreground rgba(193,194,197,0.75);
-@define-color background rgba(10, 14, 23, 0.75);
-@define-color inactive rgba(23,109,138,0.75); 
+/* CHANGE THIS TO YOUR USERNAME */
+@import "/home/kasey/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: Hack;
+    all:unset;
+    font-family: JetBrains Mono;
     font-size: 12px;
 }
 
 window#waybar {
-    background-color: @background; 
+    background-color: alpha(@background, 0.75); 
     color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
@@ -18,30 +18,51 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-.modules-center {
-    margin-left: -35em;
-}
-
 button {
     border: none;
     border-radius: 0;
 }
-
 #tags button {
     background-color: transparent;
-    color: @inactive;
-	padding-top: 2px;
-	padding-bottom: 2px;
+    color: @foreground;
+	padding: 2px 6px 1px 6px;
 }
 
 #tags button.focused {
-    color: @foreground;
+    color: @color6;
 }
 
 #tags button.urgent {
-    background-color: rgba(235,77,75,0.75);
+    background-color: @color10;
 }
 
-.modules-left > widget:first-child > #tags {
+/*.modules-left > widget:first-child > #tags {
     margin-left: 0;
+}*/
+
+tooltip {
+    background: @background;
+	border: 1px solid @color12;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+#tray menu {
+    padding: 1px;
+	border: 1px solid @color1;
+    background: @background;
+    color: @foreground;
+}
+
+#tray menu menuitem {
+    padding: 0 4px 0 4px;
+    background: @background;
+    color: @foreground;
+}
+
+#tray menu menuitem:hover {
+    background: @color1;
+    color: @background;
 }
